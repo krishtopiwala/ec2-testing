@@ -8,7 +8,8 @@ import fs from "fs";
 import path from "path";
 
 const app : express.Application = express();
-dotenv.config({ path: "./.env" });
+dotenv.config({});
+// dotenv.config({ path: "./.env" });
 
 
 // app.use(morgan("dev"));
