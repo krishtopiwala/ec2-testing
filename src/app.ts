@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
-import connectDB from "./config/db";
+// import connectDB from "./config/db";
 // import morgan from './'
 import morgan from "morgan";
 import fs from "fs";
@@ -22,9 +22,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const PORT : Number = Number(process.env.PORT);
-const DBURL : string = String(process.env.MONGO_URL);
+// const DBURL : string = String(process.env.MONGO_URL);
 
-connectDB(DBURL);
+// connectDB(DBURL);
 
 app.get("/", async (request : Request, response : Response) => {
     try {

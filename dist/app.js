@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const dotenv_1 = __importDefault(require("dotenv"));
-const db_1 = __importDefault(require("./config/db"));
+// import connectDB from "./config/db";
 // import morgan from './'
 const morgan_1 = __importDefault(require("morgan"));
 const fs_1 = __importDefault(require("fs"));
@@ -21,8 +21,8 @@ app.use((0, morgan_1.default)('common', {
 app.use(body_parser_1.default.json());
 app.use(body_parser_1.default.urlencoded({ extended: true }));
 const PORT = Number(process.env.PORT);
-const DBURL = String(process.env.MONGO_URL);
-(0, db_1.default)(DBURL);
+// const DBURL : string = String(process.env.MONGO_URL);
+// connectDB(DBURL);
 app.get("/", async (request, response) => {
     try {
         await response.json({ msg: "Hello" });
